@@ -755,9 +755,25 @@ section#journey { background: transparent; }
 .cf-detail li::before { content: ""; position: absolute; left: 4px; top: .7em; width: 6px; height: 6px; border-radius: 50%; background: var(--c, var(--violet)); box-shadow: 0 0 10px var(--c, var(--violet)); }
 .cf-detail .repo-link { white-space: nowrap; }
 @media (max-width: 900px) { .cf-detail { grid-template-columns: minmax(0, 1fr); } .cf-detail .repo-link { justify-self: start; } }
-.early { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13.5px; color: var(--muted); }
-.early a { font-family: var(--f-mono); font-size: 12px; text-decoration: none; padding: 6px 10px; border: 1px dashed var(--line-2); border-radius: 8px; transition: color .2s, border-color .2s; }
-.early a:hover { color: var(--fg); border-color: var(--muted); }
+.early-sec { margin-top: clamp(64px, 9vw, 112px); scroll-margin-top: calc(var(--nav-h, 64px) + 24px); }
+.early-head h3 { font-family: var(--f-display); font-size: clamp(26px, 3.4vw, 40px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.12; margin: 12px 0 10px; text-wrap: balance; }
+.early-head p { color: var(--muted); max-width: 60ch; }
+.early-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 310px), 1fr)); gap: 18px; margin-top: 28px; }
+.ecard { display: flex; flex-direction: column; }
+.eshot { display: block; width: 100%; padding: 0; border: 0; border-bottom: 1px solid var(--line); background: var(--surface-2); cursor: zoom-in; aspect-ratio: 16 / 10; overflow: hidden; }
+.eshot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .6s var(--ease); }
+@media (hover: hover) { .ecard:hover .eshot img { transform: scale(1.035); } }
+.ebody { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; min-width: 0; }
+.etop { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.etop h4 { font-family: var(--f-display); font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+.ewhen { font-family: var(--f-mono); font-size: 11.5px; color: var(--muted); white-space: nowrap; }
+.ebody p { color: var(--muted); font-size: 14px; line-height: 1.55; }
+.etags { display: flex; flex-wrap: wrap; gap: 6px; }
+.elinks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 4px; }
+.elink { font-family: var(--f-mono); font-size: 12px; text-decoration: none; padding: 7px 11px; border-radius: 9px; border: 1px solid var(--line-2); color: var(--muted); transition: color .2s, border-color .2s, background .2s; }
+.elink:hover { color: var(--fg); border-color: var(--muted); }
+.elink.live { color: var(--teal); border-color: color-mix(in srgb, var(--teal) 42%, transparent); }
+.elink.live:hover { background: color-mix(in srgb, var(--teal) 10%, transparent); }
 
 /* stack: tech orbit */
 .orbit-wrap { position: relative; margin-bottom: 26px; }
@@ -1232,12 +1248,59 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
       </div>
       <div class="cf-dots" id="cfDots" role="group" aria-label="Choose a project"></div>
       <div class="win cf-detail" id="cfDetail" aria-live="polite"></div>
-      <div class="early">Early work on shrey99:
-        <a href="https://github.com/shrey99/What-is-the-Weather" target="_blank" rel="noopener">What-is-the-Weather</a>
-        <a href="https://github.com/shrey99/Password-Generator" target="_blank" rel="noopener">Password-Generator</a>
-        <a href="https://github.com/shrey99/Vegan-o-pedia" target="_blank" rel="noopener">Vegan-o-pedia</a>
-        <a href="https://github.com/shrey99/Apparel-Recommandation-System" target="_blank" rel="noopener">Apparel-Recommendation</a>
-        <a href="https://github.com/shrey99" target="_blank" rel="noopener">all repos ↗</a>
+      <div class="early-sec" id="early">
+        <div class="early-head rv">
+          <span class="eyebrow">Where it started</span>
+          <h3>First projects, <span class="grad">still running.</span></h3>
+          <p>What I built while learning, from 2022 to 2023. Every one is live. Click a screenshot to see it bigger.</p>
+        </div>
+        <div class="early-grid">
+          <article class="win ecard rv" style="--d:0.00s">
+            <button type="button" class="eshot" data-full="assets/projects/early-weather.jpg" data-cap="What&#x27;s the Weather" aria-label="Enlarge the What&#x27;s the Weather screenshot"><img src="assets/projects/early-weather.jpg" alt="What&#x27;s the Weather showing current conditions in Gurugram" width="1600" height="1000" loading="lazy" decoding="async"></button>
+            <div class="ebody">
+              <div class="etop"><h4>What&#x27;s the Weather</h4><span class="ewhen">Aug 2023</span></div>
+              <p>Weather where you are, or in any city: temperature, wind, humidity and cloud cover. Rebuilt on Open-Meteo, so no API key ships to the browser.</p>
+              <div class="etags"><span class="pill">JavaScript</span><span class="pill">Geolocation</span><span class="pill">REST API</span></div>
+              <div class="elinks"><a class="elink live" href="https://weather-app-one-sooty-36.vercel.app/" target="_blank" rel="noopener">Live site ↗</a><a class="elink" href="https://github.com/shreycodeslit/weather-app" target="_blank" rel="noopener">Code ↗</a></div>
+            </div>
+          </article>
+          <article class="win ecard rv" style="--d:0.06s">
+            <button type="button" class="eshot" data-full="assets/projects/early-passwordgen.jpg" data-cap="Password Generator" aria-label="Enlarge the Password Generator screenshot"><img src="assets/projects/early-passwordgen.jpg" alt="Password Generator with a 16-character password and every option ticked" width="1600" height="1000" loading="lazy" decoding="async"></button>
+            <div class="ebody">
+              <div class="etop"><h4>Password Generator</h4><span class="ewhen">Aug 2023</span></div>
+              <p>Choose a length and character types. It builds a shuffled password, rates its strength and copies it in one click.</p>
+              <div class="etags"><span class="pill">JavaScript</span><span class="pill">Clipboard API</span><span class="pill">CSS</span></div>
+              <div class="elinks"><a class="elink live" href="https://password-generator-pearl-pi.vercel.app/" target="_blank" rel="noopener">Live site ↗</a><a class="elink" href="https://github.com/shreycodeslit/password-generator" target="_blank" rel="noopener">Code ↗</a></div>
+            </div>
+          </article>
+          <article class="win ecard rv" style="--d:0.12s">
+            <button type="button" class="eshot" data-full="assets/projects/early-tictactoe.jpg" data-cap="Tic-Tac-Toe" aria-label="Enlarge the Tic-Tac-Toe screenshot"><img src="assets/projects/early-tictactoe.jpg" alt="Tic-Tac-Toe game in progress on a glass board" width="1600" height="1000" loading="lazy" decoding="async"></button>
+            <div class="ebody">
+              <div class="etop"><h4>Tic-Tac-Toe</h4><span class="ewhen">Aug 2023</span></div>
+              <p>Two-player game on a frosted-glass board. It tracks whose turn it is, highlights the winning line and resets for a rematch.</p>
+              <div class="etags"><span class="pill">JavaScript</span><span class="pill">DOM</span><span class="pill">CSS</span></div>
+              <div class="elinks"><a class="elink live" href="https://tic-tac-toe-ruddy-omega-97.vercel.app/" target="_blank" rel="noopener">Live site ↗</a><a class="elink" href="https://github.com/shreycodeslit/tic-tac-toe" target="_blank" rel="noopener">Code ↗</a></div>
+            </div>
+          </article>
+          <article class="win ecard rv" style="--d:0.18s">
+            <button type="button" class="eshot" data-full="assets/projects/early-wedding.jpg" data-cap="Wedding Invitation" aria-label="Enlarge the Wedding Invitation screenshot"><img src="assets/projects/early-wedding.jpg" alt="Wedding invitation page with the couple&#x27;s names, date and venue" width="1600" height="1000" loading="lazy" decoding="async"></button>
+            <div class="ebody">
+              <div class="etop"><h4>Wedding Invitation</h4><span class="ewhen">Nov 2022</span></div>
+              <p>An invitation site for a family wedding, with a live countdown, the venue on a map, a downloadable card and music.</p>
+              <div class="etags"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">jQuery</span></div>
+              <div class="elinks"><a class="elink live" href="https://wedding-invitation-one-phi-60.vercel.app/" target="_blank" rel="noopener">Live site ↗</a><a class="elink" href="https://github.com/shreycodeslit/wedding-invitation" target="_blank" rel="noopener">Code ↗</a></div>
+            </div>
+          </article>
+          <article class="win ecard rv" style="--d:0.24s">
+            <button type="button" class="eshot" data-full="assets/projects/early-firstportfolio.jpg" data-cap="My First Portfolio" aria-label="Enlarge the My First Portfolio screenshot"><img src="assets/projects/early-firstportfolio.jpg" alt="First portfolio home section with a profile photo" width="1600" height="1000" loading="lazy" decoding="async"></button>
+            <div class="ebody">
+              <div class="etop"><h4>My First Portfolio</h4><span class="ewhen">Sep 2022</span></div>
+              <p>Where it all began: a one-page portfolio with a light and dark theme, skills, qualifications and a project slider.</p>
+              <div class="etags"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span></div>
+              <div class="elinks"><a class="elink live" href="https://first-portfolio-sigma-seven.vercel.app/" target="_blank" rel="noopener">Live site ↗</a><a class="elink" href="https://github.com/shreycodeslit/first-portfolio" target="_blank" rel="noopener">Code ↗</a></div>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -1439,7 +1502,6 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
           <p class="intro">Hiring, a project idea, feedback on this site, or just hello. The message is already addressed; pick a starter or write your own.</p>
           <div class="socials">
             <a href="https://github.com/shreycodeslit" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>shreycodeslit</a>
-            <a href="https://github.com/shrey99" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>shrey99 (early work)</a>
             <a data-social="linkedin" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z"/></svg>LinkedIn</a>
             <a data-social="leetcode" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2.5 6 10a3 3 0 0 0 0 4.2l4.1 4.1a3 3 0 0 0 4.2 0l2.1-2.1-1.4-1.4-2.1 2.1a1 1 0 0 1-1.4 0L7.4 12.8a1 1 0 0 1 0-1.4L15 3.9zM10 12h10v2H10z"/></svg>LeetCode</a>
           </div>
@@ -2057,7 +2119,6 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
     { t: 'Switch light / dark theme', k: 'action', run: toggleTheme },
     { t: 'Copy my email', k: 'action', run: copyEmail },
     { t: 'Open GitHub (shreycodeslit)', k: 'link', href: 'https://github.com/shreycodeslit' },
-    { t: 'Open GitHub (shrey99, early work)', k: 'link', href: 'https://github.com/shrey99' },
     { t: 'Back to top', k: 'action', go: '#top' },
     { t: 'sudo hire shrey', k: 'easter egg', run: function () { toast('Permission granted. Opening a new message 🚀'); go('#contact'); } }
   ];

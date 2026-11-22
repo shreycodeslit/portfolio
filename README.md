@@ -15,7 +15,7 @@ Everything you'd normally change lives in the `SITE` block near the top of the m
 | `resume` | Set to `resume.pdf` and add that file here to show a Résumé button |
 | `live` | Live links for each project |
 
-Project screenshots are in `assets/projects/`.
+Project screenshots are in `assets/projects/`. The "Where it started" section shows the early projects (2022–2023), each live on Vercel with its code on this GitHub account.
 
 ## Deploying
 

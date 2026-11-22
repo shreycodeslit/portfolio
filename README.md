@@ -2,7 +2,7 @@
 
 My personal site: a 3D, light/dark portfolio built as one static page (HTML, CSS, vanilla JS and Three.js).
 
-**Live:** https://shreygupta.vercel.app
+**Live:** https://shreygupta-three.vercel.app
 
 ## Editing
 

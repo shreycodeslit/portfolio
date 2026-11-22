@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shreygupta.vercel.app/sitemap.xml
+Sitemap: https://shreygupta-three.vercel.app/sitemap.xml

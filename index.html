@@ -1563,7 +1563,11 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
     live: {                 // live app links, filled in after deployment
       'hunger-bridge': 'https://hungerbridge.vercel.app',
       'tone-tuner': 'https://tonetuner-shrey.vercel.app',
-      'presidents': 'https://presidents-kill-time.vercel.app'
+      'presidents': 'https://presidents-kill-time.vercel.app',
+      'saydo': 'https://saydo-psi.vercel.app',
+      'shaadios': 'https://shaadios-xi.vercel.app',
+      'nagrik': 'https://nagrik-jet.vercel.app',
+      'atlas': 'https://atlas-smoky-mu.vercel.app'
     }
   };
 
@@ -1737,7 +1741,7 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
     'JavaScript': ['JS', '#f7df1e'], 'TypeScript': ['TS', '#3178c6'], 'Java': ['Jv', '#e76f00'], 'Python': ['Py', '#3776ab'], 'SQL': ['SQL', '#8fa3c4'],
     'React': ['Re', '#61dafb'], 'Next.js': ['Nx', '#f2f2f2'], 'Redux': ['Rx', '#764abc'], 'React Query': ['RQ', '#ff4154'], 'Tailwind': ['Tw', '#38bdf8'], 'MUI': ['MUI', '#007fff'], 'HTML': ['H5', '#e34f26'], 'CSS': ['C3', '#1572b6'],
     'Node.js': ['No', '#5fa04e'], 'Express': ['Ex', '#d4d8e2'], 'REST APIs': ['API', '#7cc4ff'], 'JWT': ['JWT', '#d63aff'],
-    'PostgreSQL': ['Pg', '#4169e1'], 'MongoDB': ['Mg', '#47a248'], 'MySQL': ['My', '#4479a1'], 'Power BI': ['BI', '#f2c811'], 'Tableau': ['Tb', '#e97627'], 'Claude API': ['Cl', '#d97757'], 'Vercel': ['▲', '#e9ebf2'],
+    'PostgreSQL': ['Pg', '#4169e1'], 'MongoDB': ['Mg', '#47a248'], 'MySQL': ['My', '#4479a1'], 'Power BI': ['BI', '#f2c811'], 'Tableau': ['Tb', '#e97627'], 'Claude API': ['Cl', '#d97757'], 'Vercel': ['▲', '#e9ebf2'], 'Gemini API': ['Ge', '#4f8df5'], 'Groq': ['Gq', '#f55036'], 'Neon': ['Ne', '#00e599'], 'Embeddings': ['Em', '#3ddcc4'], 'Web Speech API': ['Sp', '#7cc4ff'],
     'Jest': ['Je', '#c21325'], 'React Testing Library': ['TL', '#e33332'], 'Postman': ['Pm', '#ff6c37'],
     'Git': ['Git', '#f05032'], 'Docker': ['Dk', '#2496ed'], 'Kubernetes': ['K8s', '#326ce5'], 'CI/CD': ['CI', '#2ea44f'], 'Figma': ['Fg', '#a259ff'],
     'Leaflet': ['Lf', '#3fae2a'], 'LLM API': ['AI', '#a594ff'], 'LLM APIs': ['AI', '#a594ff'], 'React Router': ['RR', '#ca4245'], 'Public APIs': ['API', '#7cc4ff'],
@@ -1803,7 +1807,7 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
     },
     whoami: function () { return ['<span class="t-out">Shrey Gupta, software engineer in Gurugram. 3 years building full-stack web apps on MERN + TypeScript, now going AI-first.</span>']; },
     work: function () { return ['<span class="t-hi">ZS Associates</span> <span class="t-dim">Nov 2023 – Oct 2026</span>', '<span class="t-out">  dashboards + APIs for US pharma clients · ~40% faster incentive processing</span>', '<span class="t-hi">Ericsson</span> <span class="t-dim">Feb – Aug 2023, intern</span>', '<span class="t-out">  React ticket tracking for global support teams · ~20% better visibility</span>', linkTo('→ see my career timeline', '#work')]; },
-    projects: function () { return ['<span class="t-v">hunger-bridge</span><span class="t-out">   food donation platform with a live map</span>', '<span class="t-v">tone-tuner</span><span class="t-out">      AI writing assistant on the Claude API</span>', '<span class="t-v">presidents</span><span class="t-out">      games + live public-API data in React</span>', linkTo('→ open the 3D showcase', '#projects')]; },
+    projects: function () { return ['<span class="t-v">hunger-bridge</span><span class="t-out">   food donation platform with a live map</span>', '<span class="t-v">saydo</span><span class="t-out">           voice to-do for English and Hinglish</span>', '<span class="t-v">shaadios</span><span class="t-out">        wedding planner with an AI agent</span>', '<span class="t-v">nagrik</span><span class="t-out">          photo-to-complaint for Gurugram</span>', '<span class="t-v">atlas</span><span class="t-out">           one map for many interests</span>', '<span class="t-v">tone-tuner</span><span class="t-out">      AI writing assistant on the Claude API</span>', '<span class="t-v">presidents</span><span class="t-out">      games + live public-API data in React</span>', linkTo('→ open the 3D showcase', '#projects')]; },
     stack: function () { return ['<span class="t-out">react · typescript · next.js · node · express · postgresql · mongodb · docker · kubernetes</span>', linkTo('→ cat package.json', '#stack')]; },
     ai: function () { return ['<span class="t-out">RAG · agents · tool calling · structured output</span>', linkTo('→ watch the traces', '#ai-lab')]; },
     contact: function () { return ['<span class="t-out">email  </span><span class="t-hi">shreygupta7264@gmail.com</span>', '<span class="t-out">github </span><span class="t-v">shreycodeslit</span>', linkTo('→ write me a message', '#contact')]; },
@@ -1861,7 +1865,43 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
 
   /* ---------- repo browser ---------- */
   var repos = [
-    { id: 'hunger-bridge', name: 'HungerBridge', lang: 'TypeScript', c: 'var(--teal)', art: 'hungerbridge-home',
+    { id: 'saydo', name: 'SayDo', lang: 'TypeScript', c: 'var(--blue)', art: 'saydo-home', kind: 'AI · voice to-do · evals',
+      tagline: 'A voice to-do list for English, Hindi and Hinglish: say one sentence and get tasks with the right dates, times and repeats.',
+      stack: ['React', 'TypeScript', 'Gemini API', 'Groq', 'Web Speech API', 'Vercel'],
+      what: ['Speak or type “kal subah mummy ko call karna”; it becomes a task due tomorrow morning', 'Understands repeats like “every second Saturday” and reads each task back before saving', 'Lists, priorities and tags, saved in your browser with no sign-up', 'A public “How well it works” page with its test scores'],
+      how: ['A rule-based parser runs on the device first and handles about 94% of phrases for free', 'Only unsure phrases go to Gemini on the free tier, with Groq as a backup', 'Code, not the model, works out repeat dates, so the AI never miscounts a calendar', 'Tested on 96 hand-checked phrases and 40 held-out ones: 97.9% and 95% right on the device'],
+      shots: ['saydo-home', 'saydo-evals', 'saydo-phone'],
+      captions: ['One sentence turned into three tasks', 'The test results page', 'SayDo on a phone'],
+      liveNote: 'AI replies use free tiers and can take a few seconds.',
+      code: [['Source code', 'https://github.com/shreycodeslit/saydo']] },
+    { id: 'shaadios', name: 'ShaadiOS', lang: 'TypeScript', c: 'var(--rose)', art: 'shaadios-quotes', kind: 'AI · agent with tools',
+      tagline: 'Plans an Indian wedding from one place: timeline, budget, vendor quotes and guests, with an AI planner that answers from your own numbers.',
+      stack: ['React', 'TypeScript', 'Gemini API', 'Groq', 'Tool calling', 'Structured output'],
+      what: ['A month-by-month timeline of 29 tasks, worked back from the wedding date', 'A budget by category that tracks what is booked and paid', 'Upload a caterer or photographer quote; AI reads it and flags missing GST, service charges and minimums', 'Ask “which caterer should we book?” and see which tools the planner used to answer'],
+      how: ['The planner is an agent loop: Gemini function calling over five tools, with Groq as a backup', 'Tools do the arithmetic, and the model is told never to redo it', 'Quote reading returns JSON checked with zod, then tidied in code so taxes count once', 'Every quote is brought to a like-for-like total for your guest count'],
+      shots: ['shaadios-quotes', 'shaadios-ask', 'shaadios-phone'],
+      captions: ['Caterer quotes compared like for like', 'The planner answering from the plan', 'ShaadiOS on a phone'],
+      liveNote: 'Runs on free AI tiers: reading a quote can take up to 30 seconds.',
+      code: [['Source code', 'https://github.com/shreycodeslit/shaadios']] },
+    { id: 'nagrik', name: 'Nagrik', lang: 'TypeScript', c: 'var(--amber)', art: 'nagrik-home', kind: 'AI · vision · civic tech',
+      tagline: 'Photograph a pothole or garbage pile in Gurugram; Nagrik finds the right department and writes the complaint in English or Hindi.',
+      stack: ['React', 'TypeScript', 'Gemini API', 'PostgreSQL', 'Neon', 'Leaflet'],
+      what: ['Take a photo; AI names the problem, rates the risk and describes it in English and Hindi', 'Faces and number plates are blurred in your browser before anything is saved', 'Shows the right MCG or GMDA channel, with the complaint ready to send on WhatsApp', 'A public map follows each problem from reported to fixed; nearby repeats join one case'],
+      how: ['Gemini vision on the free tier returns strict JSON that is checked before use', 'Routing is a plain lookup table, so the department is never a guess', 'Duplicates: same problem type within 60 m, or a matching photo fingerprint', 'Postgres on Neon, queried over HTTP from Vercel Edge Functions'],
+      shots: ['nagrik-home', 'nagrik-complaint', 'nagrik-phone'],
+      captions: ['Nagrik home page', 'The complaint in Hindi, with the right channel and a duplicate warning', 'Reporting from a phone'],
+      liveNote: 'Sample photos are illustrations; reading a real photo takes about 10 seconds.',
+      code: [['Source code', 'https://github.com/shreycodeslit/nagrik']] },
+    { id: 'atlas', name: 'Atlas', lang: 'TypeScript', c: 'var(--sky)', art: 'atlas-map', kind: 'AI · embeddings',
+      tagline: 'One map for people with many interests: log practice in a line, see links between your pursuits and get a balanced week.',
+      stack: ['React', 'TypeScript', 'Gemini API', 'Embeddings', 'Groq', 'Vercel'],
+      what: ['Log a session in plain words, like “guitar 40 min barre chords”', 'A draggable map of your interests, with minutes and streaks for each', '“Find links in my notes” suggests real overlaps, such as spaced repetition for chess and Spanish', 'A weekly plan that makes room for what has gone quiet, plus an AI monthly review'],
+      how: ['Retrieve, then judge: Gemini embeddings shortlist note pairs, and the model keeps only useful links', 'Falls back to TF-IDF matching if embeddings are unavailable', 'Stats, streaks and the weekly plan are plain code, not AI', 'Everything stays in your browser; no account needed'],
+      shots: ['atlas-map', 'atlas-review', 'atlas-phone'],
+      captions: ['The interest map with a suggested link', 'The monthly review', 'Atlas on a phone'],
+      liveNote: 'AI features use free tiers: the monthly review can take about 30 seconds.',
+      code: [['Source code', 'https://github.com/shreycodeslit/atlas']] },
+    { id: 'hunger-bridge', name: 'HungerBridge', lang: 'TypeScript', c: 'var(--teal)', art: 'hungerbridge-home', kind: 'Full-stack · social impact · AI',
       tagline: 'Connects surplus food from homes and restaurants with people and NGOs nearby, before it goes to waste.',
       stack: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Leaflet', 'JWT', 'Claude API'],
       what: ['Post surplus food with a photo, quantity and pickup deadline', 'Browse nearby food as a grid or on a live map, filtered by veg or non-veg', 'Claim food in one tap; the donor tracks it in My Posts', 'An AI safety note warns when a pickup window is risky'],
@@ -1870,7 +1910,7 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
       captions: ['HungerBridge home page', 'Food posts near you (sample data)', 'Browsing on a phone'],
       liveNote: 'Runs on a free server: the first load can take up to a minute while it wakes up.',
       code: [['Frontend code', 'https://github.com/shreycodeslit/hungerbridge-frontend'], ['Backend code', 'https://github.com/shreycodeslit/hungerbridge-backend']] },
-    { id: 'tone-tuner', name: 'ToneTuner', lang: 'TypeScript', c: 'var(--violet)', art: 'tonetuner-home',
+    { id: 'tone-tuner', name: 'ToneTuner', lang: 'TypeScript', c: 'var(--violet)', art: 'tonetuner-home', kind: 'AI · writing tools',
       tagline: 'An AI writing assistant with six focused tools: EOD updates, rephrasing, grammar, calmer tone, shorter text and bullets to email.',
       stack: ['React', 'TypeScript', 'Claude API', 'Vercel'],
       what: ['Write a professional end-of-day update from rough notes', 'Rephrase a message as formal, friendly, assertive or diplomatic', 'Fix grammar, soften a blunt message or cut it shorter', 'Turn bullet points into a polished email, ready to copy'],
@@ -1878,7 +1918,7 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
       shots: ['tonetuner-home', 'tonetuner-tool', 'tonetuner-phone'],
       captions: ['ToneTuner home: six writing tools', 'Rephrasing a message in a formal tone', 'ToneTuner on a phone'],
       code: [['Source code', 'https://github.com/shreycodeslit/tonetuner']] },
-    { id: 'presidents', name: "That's How Presidents Kill Time", lang: 'TypeScript', c: 'var(--rose)', art: 'presidents-home',
+    { id: 'presidents', name: "That's How Presidents Kill Time", lang: 'TypeScript', c: 'var(--rose)', art: 'presidents-home', kind: 'Frontend · games and public APIs',
       tagline: 'A tongue-in-cheek entertainment portal: jokes, memes, trivia, trick questions, would-you-rather and five mini games.',
       stack: ['React', 'TypeScript', 'React Router', 'Public APIs'],
       what: ['Five mini games, including memory cards, typing speed and a reaction timer', 'Trivia across 15+ categories and 40 trick questions', 'Fresh jokes, memes, facts and advice from public APIs', 'High scores saved on your device'],
@@ -2198,13 +2238,13 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
   function artHtml(kind) {
     return '<div class="preview shot"><img src="assets/projects/' + kind + '.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></div>';
   }
-  var kinds = ['Full-stack · social impact · AI', 'AI · writing tools', 'Frontend · games and public APIs'];
+  var kinds = ['Full-stack · social impact', 'AI · writing tools', 'Frontend · games and data'];
   var cfActive = 0, cards = [], dots = [];
   repos.forEach(function (r, i) {
     var c = document.createElement('article');
     c.className = 'cf-card'; c.style.setProperty('--c', r.c);
     c.setAttribute('aria-label', r.name + ', project ' + (i + 1) + ' of ' + repos.length);
-    c.innerHTML = artHtml(r.art) + '<div class="cf-body"><span class="cf-kicker">' + esc(kinds[i] || '') + '</span><h3>' + esc(r.name) + '</h3><p>' + esc(r.tagline) + '</p><div class="shields">' + r.stack.map(function (s) { return '<span class="tchip">' + techIcon(s, 'sm') + esc(s) + '</span>'; }).join('') + '</div></div>';
+    c.innerHTML = artHtml(r.art) + '<div class="cf-body"><span class="cf-kicker">' + esc(r.kind || '') + '</span><h3>' + esc(r.name) + '</h3><p>' + esc(r.tagline) + '</p><div class="shields">' + r.stack.map(function (s) { return '<span class="tchip">' + techIcon(s, 'sm') + esc(s) + '</span>'; }).join('') + '</div></div>';
     c.addEventListener('click', function () { if (i !== cfActive) cfGo(i); });
     cfStage.appendChild(c); cards.push(c);
     var d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', 'Show ' + r.name);
@@ -2217,11 +2257,14 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
     var shift = Math.min(w * 0.34, 360);
     var h = 0;
     cards.forEach(function (c, i) {
-      var d = ((i - cfActive + n + 1) % n) - 1;
-      c.style.transform = 'translateX(-50%) translateX(' + (d * shift) + 'px) translateZ(' + (d ? -280 : 0) + 'px) rotateY(' + (-d * 40) + 'deg)';
-      c.style.opacity = d ? 0.75 : 1;
-      c.style.zIndex = d ? 1 : 3;
+      var half = Math.floor(n / 2), d = ((i - cfActive + n + half) % n) - half, ad = Math.abs(d), sg = d < 0 ? -1 : 1;
+      var x = ad === 0 ? 0 : sg * shift * (ad === 1 ? 1 : 1.55);
+      c.style.transform = 'translateX(-50%) translateX(' + x + 'px) translateZ(' + (ad === 0 ? 0 : ad === 1 ? -280 : -520) + 'px) rotateY(' + (-sg * Math.min(ad, 2) * (ad ? 40 / Math.min(ad, 2) + (ad > 1 ? 8 : 0) : 0)) + 'deg)';
+      c.style.opacity = ad <= 1 ? 1 : ad === 2 ? 0.45 : 0;
+      c.style.pointerEvents = ad > 2 ? 'none' : '';
+      c.style.zIndex = 3 - Math.min(ad, 3);
       c.setAttribute('aria-current', d ? 'false' : 'true');
+      if (ad > 2) c.setAttribute('aria-hidden', 'true'); else c.removeAttribute('aria-hidden');
       h = Math.max(h, c.offsetHeight);
     });
     cfStage.style.height = h + 'px';

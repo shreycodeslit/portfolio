@@ -40,7 +40,7 @@
   --line-2: rgba(255, 255, 255, .16);
   --fg: #eef0f7;
   --muted: #a3a9be;
-  --dim: #6f7690;
+  --dim: #80879f;
   --violet: #a99bff;
   --teal: #5ee7d0;
   --amber: #ffc46b;
@@ -533,13 +533,14 @@ section { padding-block: var(--sec-pad); scroll-margin-top: calc(var(--nav-h) - 
 .tl-axis span:first-child { transform: none; }
 .tl-axis span:last-child { transform: translateX(-100%); }
 .tl-track { position: relative; height: 44px; border-radius: 11px; background: repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 12.5%), color-mix(in srgb, var(--surface-2) 55%, transparent); }
-.tl-bar { position: absolute; top: 6px; height: 32px; left: var(--l); width: var(--w); border: 0; border-radius: 9px; background: var(--c); color: #0a0c12; font-weight: 700; font-size: 13.5px; display: flex; align-items: center; padding: 0 12px; white-space: nowrap; cursor: pointer; transform-origin: left; transition: transform .9s var(--ease) var(--d, 0s), box-shadow .3s, filter .3s; box-shadow: inset 0 -2px 0 rgba(0,0,0,.18); }
+.tl-bar { position: absolute; top: 6px; height: 32px; left: var(--l); width: var(--w); border: 0; border-radius: 9px; background: var(--c); color: var(--on-c, #0a0c12); font-weight: 700; font-size: 13.5px; display: flex; align-items: center; padding: 0 12px; white-space: nowrap; cursor: pointer; transform-origin: left; transition: transform .9s var(--ease) var(--d, 0s), box-shadow .3s, filter .3s; box-shadow: inset 0 -2px 0 rgba(0,0,0,.18); }
+[style*="--c:var(--sky)"], [style*="--c:var(--violet)"], [style*="--c:var(--blue)"], [style*="--c:var(--rose)"] { --on-c: var(--tl-ink, #0a0c12); }
 .tl-bar span { overflow: hidden; text-overflow: ellipsis; }
 .tl-bar.out span { position: absolute; left: calc(100% + 10px); color: var(--fg); overflow: visible; }
 .tl-bar:hover, .tl-bar.on { box-shadow: inset 0 -2px 0 rgba(0,0,0,.18), 0 0 0 3px color-mix(in srgb, var(--c) 35%, transparent); filter: brightness(1.08); }
 .tl.rv:not(.in) .tl-bar { transform: scaleX(.06); }
 .tl-now { position: absolute; top: 0; bottom: 0; left: calc(var(--name) + (100% - var(--name)) * .979); width: 0; border-left: 2px dashed var(--amber); pointer-events: none; }
-.tl-now b { position: absolute; top: -4px; right: 8px; font-family: var(--f-mono); font-size: 11px; font-weight: 600; color: var(--amber); white-space: nowrap; }
+.tl-now b { position: absolute; top: -4px; right: 8px; font-family: var(--f-mono); font-size: 11px; font-weight: 600; color: var(--amber-ink, var(--amber)); white-space: nowrap; }
 .tl-now i { position: absolute; bottom: 14px; left: -7px; width: 12px; height: 12px; border-radius: 50%; background: var(--amber); animation: pulseA 2.2s infinite; }
 @keyframes pulseA { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--amber) 60%, transparent); } 70% { box-shadow: 0 0 0 10px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
 .tl-hint { margin-top: 14px; font-size: 13.5px; color: var(--muted); }
@@ -549,7 +550,7 @@ section { padding-block: var(--sec-pad); scroll-margin-top: calc(var(--nav-h) - 
 .ch.on { border-color: var(--c); box-shadow: 0 0 0 1px var(--c), 0 24px 40px -26px color-mix(in srgb, var(--c) 70%, transparent); }
 @media (hover: hover) and (pointer: fine) { .ch:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--c) 60%, var(--line)); } }
 .ch-top { display: flex; align-items: center; gap: 12px; }
-.org { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; background: var(--c); color: #0a0c12; font-family: var(--f-display); font-weight: 800; font-size: 15px; letter-spacing: -0.02em; flex: none; box-shadow: inset 0 -3px 0 rgba(0,0,0,.18); }
+.org { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; background: var(--c); color: var(--on-c, #0a0c12); font-family: var(--f-display); font-weight: 800; font-size: 15px; letter-spacing: -0.02em; flex: none; box-shadow: inset 0 -3px 0 rgba(0,0,0,.18); }
 .ch-when { display: block; font-family: var(--f-mono); font-size: 12px; color: var(--fg); font-variant-numeric: tabular-nums; }
 .ch-dur { display: inline-block; margin-top: 3px; font-family: var(--f-mono); font-size: 11px; padding: 2px 8px; border-radius: 999px; color: var(--c); border: 1px solid color-mix(in srgb, var(--c) 45%, transparent); }
 .ch h3 { font-size: clamp(20px, 1.9vw, 23px); font-weight: 800; margin-top: 6px; }
@@ -897,7 +898,9 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
   --line-2: rgba(17, 18, 20, .18);
   --fg: #111214;
   --muted: #565a63;
-  --dim: #868a94;
+  --dim: #63676f;
+  --tl-ink: #fff;
+  --amber-ink: #8a5300;
   --violet: #5b45f0;
   --teal: #0b8f7a;
   --amber: #b86e00;
@@ -961,7 +964,9 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
   --line-2: rgba(17, 18, 20, .18);
   --fg: #111214;
   --muted: #565a63;
-  --dim: #868a94;
+  --dim: #63676f;
+  --tl-ink: #fff;
+  --amber-ink: #8a5300;
   --violet: #5b45f0;
   --teal: #0b8f7a;
   --amber: #b86e00;
@@ -1541,7 +1546,7 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
   </div>
 </footer>
 
-<a class="fab magnet" id="fab" href="#contact"><span class="wave" aria-hidden="true">👋</span> Say hi</a>
+<aside aria-label="Quick contact"><a class="fab magnet" id="fab" href="#contact"><span class="wave" aria-hidden="true">👋</span> Say hi</a></aside>
 
 <div class="pal-back" id="pal" hidden>
   <div class="pal" role="dialog" aria-modal="true" aria-label="Command menu">

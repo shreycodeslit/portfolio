@@ -2521,10 +2521,13 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
     }
 
     function lerp(a, b, k) { return a + (b - a) * k; }
+    var meCut = document.querySelector('.me-cut');
     function draw() {
-      var x = mobile ? 0 : target.x, op = target.op * (mobile ? 0.7 : 1) * glOpK;
-      mouseG.position.x = reduce ? x : lerp(mouseG.position.x, x, 0.04);
-      mouseG.position.y = reduce ? target.y : lerp(mouseG.position.y, target.y, 0.04);
+      var hx = target.x, hy = target.y, kk = 0.04;
+      if (curKey === 'home' && meCut) { var mr = meCut.getBoundingClientRect(); if (mr.width) { var hh = Math.tan(27.5 * Math.PI / 180) * camera.position.z, hw = hh * camera.aspect; hx = ((mr.left + mr.width * 0.5) / window.innerWidth * 2 - 1) * hw; hy = -((mr.top + mr.height * 0.36) / window.innerHeight * 2 - 1) * hh; kk = 0.14; } }
+      var x = (mobile && curKey !== 'home') ? 0 : hx, op = target.op * (mobile ? 0.7 : 1) * glOpK;
+      mouseG.position.x = reduce ? x : lerp(mouseG.position.x, x, kk);
+      mouseG.position.y = reduce ? hy : lerp(mouseG.position.y, hy, kk);
       var sc = target.sc * (mobile ? 0.9 : 1);
       var s0 = reduce ? sc : lerp(mouseG.scale.x, sc, 0.04);
       mouseG.scale.set(s0, s0, s0);

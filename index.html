@@ -21,7 +21,7 @@
 <meta name="twitter:image" content="https://shreygupta-three.vercel.app/assets/og.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Shrey Gupta", "jobTitle": "Software Engineer", "url": "https://shreygupta-three.vercel.app/", "address": {"@type": "PostalAddress", "addressLocality": "Gurugram", "addressCountry": "IN"}, "alumniOf": "Vellore Institute of Technology", "knowsAbout": ["React", "TypeScript", "Node.js", "PostgreSQL", "Generative AI"], "sameAs": ["https://github.com/shreycodeslit", "https://www.linkedin.com/in/shrey-gupta-68237119b/", "https://leetcode.com/u/shreyatleetcode/"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Shrey Gupta", "jobTitle": "Software Engineer", "url": "https://shreygupta-three.vercel.app/", "image": "https://shreygupta-three.vercel.app/assets/shrey.jpg", "address": {"@type": "PostalAddress", "addressLocality": "Gurugram", "addressCountry": "IN"}, "alumniOf": "Vellore Institute of Technology", "knowsAbout": ["React", "TypeScript", "Node.js", "PostgreSQL", "Generative AI"], "sameAs": ["https://github.com/shreycodeslit", "https://www.linkedin.com/in/shrey-gupta-68237119b/", "https://leetcode.com/u/shreyatleetcode/"]}</script>
 <script>try{var t=localStorage.getItem('sg-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -154,6 +154,11 @@ section { padding-block: var(--sec-pad); scroll-margin-top: calc(var(--nav-h) - 
 .line { display: block; overflow: hidden; padding-bottom: .06em; margin-bottom: -.06em; }
 .word { display: inline-block; animation: rise 1s var(--ease) both; }
 .line:nth-child(2) .word { animation-delay: .12s; }
+.hero h1 .me { display: inline-block; width: .74em; height: .74em; margin-left: .16em; vertical-align: -.015em; padding: .03em; border-radius: 50%; background: linear-gradient(135deg, #8ecbff, #a99bff 45%, #ff8fb1); animation: me-in 1s var(--ease) .3s both; transition: transform .5s var(--ease); }
+.hero h1 .me img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: .022em solid var(--bg); }
+.hero h1 .me:hover { transform: rotate(-6deg) scale(1.04); }
+@keyframes me-in { from { transform: translateY(60%) scale(.5); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .hero h1 .me { animation: none; transition: none; } }
 @keyframes rise { from { transform: translateY(105%); } }
 .hero .lede { font-size: clamp(18px, 2vw, 22px); color: var(--muted); max-width: 36ch; margin-top: 26px; line-height: 1.5; }
 .hero .lede b { color: var(--fg); font-weight: 600; }
@@ -927,6 +932,7 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
 :root:not([data-theme="dark"]) .btn.primary { background: #111214; color: #fff; }
 :root:not([data-theme="dark"]) .btn.primary:hover { background: #5b45f0; box-shadow: 0 16px 36px -14px rgba(91,69,240,.6); }
 :root:not([data-theme="dark"]) .hero h1 { text-shadow: none; }
+:root:not([data-theme="dark"]) .hero h1 .me { background: linear-gradient(135deg, #1f62d8, #5b45f0 45%, #c8326a); }
 :root:not([data-theme="dark"]) .grad { background-image: linear-gradient(100deg, #1f62d8, #5b45f0 40%, #c8326a 75%, #b86e00); }
 :root:not([data-theme="dark"]) .nav.scrolled { background: rgba(243,243,240,.78); }
 :root:not([data-theme="dark"]) footer { background: rgba(243,243,240,.6); }
@@ -993,6 +999,7 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
 :root[data-theme="light"] .btn.primary { background: #111214; color: #fff; }
 :root[data-theme="light"] .btn.primary:hover { background: #5b45f0; box-shadow: 0 16px 36px -14px rgba(91,69,240,.6); }
 :root[data-theme="light"] .hero h1 { text-shadow: none; }
+:root[data-theme="light"] .hero h1 .me { background: linear-gradient(135deg, #1f62d8, #5b45f0 45%, #c8326a); }
 :root[data-theme="light"] .grad { background-image: linear-gradient(100deg, #1f62d8, #5b45f0 40%, #c8326a 75%, #b86e00); }
 :root[data-theme="light"] .nav.scrolled { background: rgba(243,243,240,.78); }
 :root[data-theme="light"] footer { background: rgba(243,243,240,.6); }
@@ -1064,7 +1071,7 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
       <div class="hero-grid">
         <div>
           <span class="badge fade-up"><span class="pulse"></span>Open to SDE roles and freelance work</span>
-          <h1><span class="line"><span class="word">Shrey</span></span><span class="line"><span class="word grad">Gupta.</span></span></h1>
+          <h1><span class="line"><span class="word">Shrey</span><span class="me"><img src="assets/shrey.jpg" width="360" height="360" alt="" decoding="async" fetchpriority="high"></span></span><span class="line"><span class="word grad">Gupta.</span></span></h1>
           <p class="lede fade-up" style="--d:.35s">I'm a <b>software engineer</b> who turns <span class="hl">unclear requirements</span> into working products, and I build with AI before the market catches up.</p>
           <div class="ctas fade-up" style="--d:.5s">
             <a class="btn primary magnet" href="#projects">See my work <span class="arr">→</span></a>

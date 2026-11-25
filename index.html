@@ -157,13 +157,12 @@ section { padding-block: var(--sec-pad); scroll-margin-top: calc(var(--nav-h) - 
 .me-cut { display: block; pointer-events: none; user-select: none; -webkit-mask-image: linear-gradient(#000 80%, transparent), linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(#000 80%, transparent), linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); mask-composite: intersect; filter: drop-shadow(0 0 1.5px rgba(200,210,255,.32)); animation: me-in 1.1s var(--ease) .2s both; }
 @keyframes me-in { from { opacity: 0; transform: translateY(28px); } }
 @media (min-width: 981px) {
-  .hero-3d { --h: clamp(440px, min(76vh, 46vw), 640px); align-self: stretch; min-height: var(--h); }
-  .me-cut { position: absolute; right: -4%; bottom: -8px; height: var(--h); width: auto; max-width: none; z-index: 0; }
-  .hero-3d .term-float { position: absolute; z-index: 1; left: -6%; width: 68%; top: calc(100% - var(--h) * .47); }
-  .hero-3d .term-body { height: 170px; }
+  .hero-3d { position: relative; --h: clamp(240px, 23vw, 320px); }
+  .me-cut { position: absolute; right: 22%; top: calc(var(--h) * -.56); height: var(--h); width: auto; max-width: none; z-index: 0; }
+  .hero-3d .term-float { position: relative; z-index: 1; }
 }
 @media (max-width: 980px) {
-  .me-cut { width: min(82vw, 400px); height: auto; margin: 8px auto -84px; position: relative; z-index: 0; }
+  .me-cut { width: min(48vw, 220px); height: auto; margin: 8px auto calc(min(48vw, 220px) * -.4); position: relative; z-index: 0; }
   .hero-3d .term-float { position: relative; z-index: 1; }
 }
 @media (prefers-reduced-motion: reduce) { .me-cut { animation: none; } }
@@ -2521,13 +2520,10 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
     }
 
     function lerp(a, b, k) { return a + (b - a) * k; }
-    var meCut = document.querySelector('.me-cut');
     function draw() {
-      var hx = target.x, hy = target.y, kk = 0.04;
-      if (curKey === 'home' && meCut) { var mr = meCut.getBoundingClientRect(); if (mr.width) { var hh = Math.tan(27.5 * Math.PI / 180) * camera.position.z, hw = hh * camera.aspect; hx = ((mr.left + mr.width * 0.5) / window.innerWidth * 2 - 1) * hw; hy = -((mr.top + mr.height * 0.36) / window.innerHeight * 2 - 1) * hh; kk = 0.14; } }
-      var x = (mobile && curKey !== 'home') ? 0 : hx, op = target.op * (mobile ? 0.7 : 1) * glOpK;
-      mouseG.position.x = reduce ? x : lerp(mouseG.position.x, x, kk);
-      mouseG.position.y = reduce ? hy : lerp(mouseG.position.y, hy, kk);
+      var x = mobile ? 0 : target.x, op = target.op * (mobile ? 0.7 : 1) * glOpK;
+      mouseG.position.x = reduce ? x : lerp(mouseG.position.x, x, 0.04);
+      mouseG.position.y = reduce ? target.y : lerp(mouseG.position.y, target.y, 0.04);
       var sc = target.sc * (mobile ? 0.9 : 1);
       var s0 = reduce ? sc : lerp(mouseG.scale.x, sc, 0.04);
       mouseG.scale.set(s0, s0, s0);
